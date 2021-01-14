@@ -1,10 +1,10 @@
-#Rise-Q
+# Rise-Q
 
-###What is this?
+### What is this?
 This is a collection of "extensions" for Rise-Q for Galaxy A5 and A7 2017.
 For now, it only contains a template zip to restore an EFS backup created during installation of Rise-Q.
 
-###How do I use this?
+### How do I use this?
 With a few short steps, you will create your own flashable zip that will restore your EFS backup.
 Follow these steps:
 

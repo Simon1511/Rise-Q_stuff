@@ -1,4 +1,4 @@
-#***Steps to restore an EFS backup in .img format***
+# Steps to restore an EFS backup in .img format
 
 1. Download the Template-zip from here and extract it.
 2. Copy your EFS backup to your computer. The file is located in /data/media/0/EFS_Backup.img. Alternatively, look into your internal storage in any file manager.
