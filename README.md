@@ -1,5 +1,9 @@
 # Rise-Q Extensions & Tools
 
+<p align="center">
+  <img width="506" height="330" src="https://forum.xda-developers.com/proxy.php?image=https%3A%2F%2Fi.ibb.co%2FwsqPkyw%2Frise-Q.png&hash=7f5f1020afda12cbfed68669643c3f43">
+</p>
+
 ### What is this?
 This is a collection of "extensions" for Rise-Q for Galaxy A5 and A7 2017.
 For now, it only contains a template zip to restore an EFS backup created during installation of Rise-Q.
@@ -16,5 +20,3 @@ Follow these steps:
    - On Linux, run `zip -r9 EFS-restoreTool_flashable.zip META-INF/ *.img` to create the zip. Copy it to your phone and flash it.
 5. Your EFS backup will be restored and you will be rebooted to recovery to finish the process.
 6. Reboot to system and you're finished!
-
-![Exynos 7880](https://forum.xda-developers.com/proxy.php?image=https%3A%2F%2Fi.ibb.co%2FwsqPkyw%2Frise-Q.png&hash=7f5f1020afda12cbfed68669643c3f43)
