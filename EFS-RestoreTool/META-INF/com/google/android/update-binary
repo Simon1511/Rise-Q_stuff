@@ -1,0 +1,79 @@
+#!/sbin/sh
+#
+# EFS-RestoreTool
+# Copyright (C) 2021 Simon1511@XDA-Developers
+# You are NOT allowed to publish this under your name!
+# Use ONLY on Galaxy A5 2017 or A7 2017!
+# Do NOT modify!
+#
+
+interface="${1}"
+updater_fd="${2}"
+OUTFD=/proc/self/fd/$2;
+ZIPFILE="$3";
+
+bootloader=$(getprop ro.boot.bootloader)
+
+# contains <string> <substring>
+contains() {
+  test "${1#*$2}" != "$1";
+}
+
+ui_print() {
+  until [ ! "$1" ]; do
+    echo "ui_print $1
+      ui_print" >> $OUTFD;
+    shift;
+  done;
+}
+
+# Unzip
+cd /tmp
+unzip -o "$ZIPFILE"
+file=$(find /tmp/ -name "*.img" | wc -l)
+
+ui_print " "
+ui_print "#######################################"
+ui_print "- EFS restoring tool"
+ui_print " "
+ui_print "- Flash on your OWN risk!"
+ui_print " "
+ui_print "- Created by Simon1511@XDA-Developers"
+ui_print "#######################################"
+
+if [ $file != "1" ]; then
+    if [ $file = "0" ]; then
+        ui_print " "
+        ui_print "- No IMG file found in the zip."
+        ui_print "Aborting..."
+        ui_print " "
+        exit
+    fi
+
+    ui_print " "
+    ui_print "- Make sure to only have 1 IMG file in the zip!"
+    ui_print "Aborting..."
+    ui_print " "
+    exit
+fi
+
+if [ -z `getprop ro.boot.bootloader | grep -E "A520|A720"` ]; then
+    ui_print " "
+    ui_print "This device is NOT an A5 or A7 2017!"
+    ui_print "Aborting..."
+    ui_print " "
+    exit
+fi
+
+if grep -qs "/efs" /proc/mounts; then
+    umount /efs
+fi
+
+# Restore
+ui_print " "
+ui_print "- Restoring backup..."
+dd if=$file of=/dev/block/platform/13540000.dwmmc0/by-name/EFS bs=4096
+ui_print "- Successfully restored backup."
+ui_print " "
+ui_print "- Rebooting to recovery to finish the process... "
+reboot recovery
