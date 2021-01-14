@@ -1,4 +1,4 @@
-# Rise-Q
+# Rise-Q Extensions & Tools
 
 ### What is this?
 This is a collection of "extensions" for Rise-Q for Galaxy A5 and A7 2017.
