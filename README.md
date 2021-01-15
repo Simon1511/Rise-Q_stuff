@@ -21,3 +21,9 @@ Follow these steps:
 5. Copy the finished .zip file to your phone's storage and flash it in recovery.
 6. Your EFS backup will be restored and you will be rebooted to recovery again to finish the process.
 7. At last, reboot to system and you're finished!
+
+#### **WARNING**
+- Dealing with EFS is always a dangerous part. I am **NOT** responsible for any damage that may be done to your device through flashing this!
+- Do **NOT** restore EFS backups from other devices or device models as it will **damage** your device.
+- Do **NOT** restore backups all the time. Flashing the RestoreTool once is **enough**!
+- You are **NOT** allowed to re-upload this or publish it under your own name!
