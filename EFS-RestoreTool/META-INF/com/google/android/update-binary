@@ -72,7 +72,7 @@ fi
 # Restore
 ui_print " "
 ui_print "- Restoring backup..."
-dd if=$file of=/dev/block/platform/13540000.dwmmc0/by-name/EFS bs=4096
+dd if=$file of=/dev/block/platform/13540000.dwmmc0/by-name/EFS
 ui_print "- Successfully restored backup."
 ui_print " "
 ui_print "- Rebooting to recovery to finish the process... "
