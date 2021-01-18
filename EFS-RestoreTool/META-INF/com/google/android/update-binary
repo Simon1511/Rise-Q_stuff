@@ -30,7 +30,8 @@ ui_print() {
 # Unzip
 cd /tmp
 unzip -o "$ZIPFILE"
-file=$(find /tmp/ -name "*.img" | wc -l)
+file=$(find /tmp/ -name "*.img")
+fileLenght=$(find /tmp/ -name "*.img" | wc -l)
 
 ui_print " "
 ui_print "#######################################"
@@ -41,8 +42,8 @@ ui_print " "
 ui_print "- Created by Simon1511@XDA-Developers"
 ui_print "#######################################"
 
-if [ $file != "1" ]; then
-    if [ $file = "0" ]; then
+if [ $fileLenght != "1" ]; then
+    if [ $fileLenght = "0" ]; then
         ui_print " "
         ui_print "- No IMG file found in the zip."
         ui_print "Aborting..."
